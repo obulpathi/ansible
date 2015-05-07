@@ -1,29 +1,37 @@
+# a single host
 mail.example.com
 
+# a group of hosts
 [webservers]
 foo.example.com
 bar.example.com
 
+# another group of hosts
 [dbservers]
 one.example.com
 two.example.com
 three.example.com
 
+# lots of hosts with patterns
 [webservers]
 www[01:50].example.com
 
+# alphabetic ranges
 [databases]
 db-[a:f].example.com
 
+# select the connection type and user on a per host basis
 [targets]
 localhost              ansible_connection=local
 other1.example.com     ansible_connection=ssh        ansible_ssh_user=mpdehaan
 other2.example.com     ansible_connection=ssh        ansible_ssh_user=mdehaan
 
+# assign variables to hosts that will be used later in playbooks
 [atlanta]
 host1 http_port=80 maxRequestsPerChild=808
 host2 http_port=303 maxRequestsPerChild=909
 
+# apply variables to a group at once
 [seattle]
 host1
 host2
@@ -32,6 +40,7 @@ host2
 ntp_server=ntp.seattle.example.com
 proxy=proxy.seattle.example.com
 
+# groups of groups, and group variables
 [raleigh]
 host2
 host3
