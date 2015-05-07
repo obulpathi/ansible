@@ -1,3 +1,5 @@
+# Default hosts file at /etc/ansible/hosts
+
 # a single host
 mail.example.com
 
