@@ -1,0 +1,8 @@
+ansible -m ping pi
+ansible pi -m command -a uptime
+ansible pi -m command -a df
+ansible pi -a uptime
+ansible pi -a df
+ansible pi -s -a "fdisk -l"
+ansible -s -m apt -a name=nginx
+ansible -s -m service -a "name=nginx state=restarted"
