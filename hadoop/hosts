@@ -1,0 +1,28 @@
+cm            ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.1.214	ansible_ssh_port=22
+
+[gateways]
+gateway-1 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.44	ansible_ssh_port=22
+gateway-2 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.198	ansible_ssh_port=22
+
+[namenodes]
+namenode      ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.81	ansible_ssh_port=22
+standby 		  ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.194	ansible_ssh_port=22
+
+[datanodes]
+datanode-6 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.58	ansible_ssh_port=22
+datanode-7 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.59	ansible_ssh_port=22
+datanode-3 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.60	ansible_ssh_port=22
+datanode-2 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.61	ansible_ssh_port=22
+datanode-5 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.62	ansible_ssh_port=22
+datanode-4 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.63	ansible_ssh_port=22
+datanode-1 		ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.64	ansible_ssh_port=22
+
+[solr]
+solr-3        ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.202	ansible_ssh_port=22
+solr-2        ansible_ssh_user=ubuntu 	ansible_ssh_host=10.195.0.210	ansible_ssh_port=22
+solr-1        ansible_ssh_user=ubuntu   ansible_ssh_host=10.195.0.217	ansible_ssh_port=22
+
+[hadoop-nonprod:children]
+namenodes
+solr
+datanodes
